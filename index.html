@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        p {
+        display: flex;
+        }
+        input, textarea {
+            margin: 0.2em;
+        }
+    </style>
+    <script>
+        window.onload = function () {
+           
+            // window.addEventListener('resize', resizeCanvas, false);
+            // drawCards();
+
+            // text1Local.onchange = update;
+            // text1Local.onkeypress = update;
+            // text2Local.onchange = update;
+            // text2Local.onkeypress = update;
+            // text3Local.onchange = update;
+            // text3Local.onkeypress = update;
+            btnSave.onclick = saveAll;
+
+            text1Local.value = localStorage.getItem('text1Local');
+            text2Local.value = localStorage.getItem('text2Local');
+            text3Local.value = localStorage.getItem('text3Local');
+
+            if ("serviceWorker" in navigator) {
+                document.getElementsByTagName("h2")[0].innerText = "YES";
+            } else {
+                document.getElementsByTagName("h2")[0].innerText = "NO";
+            }
+        }
+
+        function update(event) {
+            localStorage.setItem(event.currentTarget.id, event.currentTarget.value);
+        }
+
+        function saveAll() {
+            localStorage.setItem('text1Local', text1Local.value);
+            localStorage.setItem('text2Local', text2Local.value);
+            localStorage.setItem('text3Local', text3Local.value);
+        }
+    </script>
+</head>
+<body>
+    <h2>Обмен данными с сервером</h2>
+    <form>
+        <p>
+            <input type="button" id="btnSave" value="Сохранить локальные значения">
+        </p>
+        <p>
+            <input type="text" id="text1Local">
+            <input type="button" value="->">
+            <input type="button" value="<-">
+            <input type="text" id="text1Server">
+        </p>
+        <p>
+            <input type="text" id="text2Local">
+            <input type="button" value="->">
+            <input type="button" value="<-">
+            <input type="text" id="text2Server">
+        </p>
+        <p>
+            <textarea rows="10" cols="21" id="text3Local"></textarea>
+            <input type="button" value="->">
+            <input type="button" value="<-">
+            <textarea rows="10" cols="21" id="text3Server"></textarea>
+        </p>
+    </form>
+</body>
+</html>

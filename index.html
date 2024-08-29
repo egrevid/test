@@ -6,10 +6,13 @@
     <title>Document</title>
     <style>
         p {
-        display: flex;
+            display: flex;
         }
         input, textarea {
             margin: 0.2em;
+        }
+        audio {
+            display: block;
         }
     </style>
     <script src="./index.js"></script>
@@ -50,6 +53,28 @@
     </script>
 </head>
 <body>
+    <h2>Тест загрузки аудио</h2>
+    <audio controls autoplay>
+        <source src="./music/02 Ed Sheeran - Castle on the hill.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+    <audio controls autoplay>
+        <source src="./music/05 Clean Bandit ft. Sean Paul & Anne-Marie - Rockabye.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+    <audio controls autoplay>
+        <source src="./music/07 Shawn Mendes - There's Nothing Holding Me Back.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+    <audio controls autoplay>
+        <source src="./music/11 Imagine Dragons - Thunder.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+    <audio controls autoplay>
+        <source src="./music/15 Rag'n'Bone Man - Skin.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+
     <h2>Обмен данными с сервером</h2>
     <form>
         <p>
